@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LuckyStar Casino</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="background-glow glow-1"></div>
+    <div class="background-glow glow-2"></div>
+
+    <div class="app-shell">
+      <header class="topbar">
+        <div class="brand-wrap">
+          <div class="brand-mark">L</div>
+          <div>
+            <div class="brand-name">LuckyStar</div>
+            <div class="brand-sub">Virtual Casino</div>
+          </div>
+        </div>
+
+        <div class="wallet-card">
+          <span>Guthaben</span>
+          <strong id="balanceDisplay">€1500</strong>
+        </div>
+      </header>
+
+      <main class="main-grid">
+        <section class="game-area">
+          <div class="tab-bar">
+            <button class="tab-btn active" data-tab="slot">Slots</button>
+            <button class="tab-btn" data-tab="roulette">Roulette</button>
+            <button class="tab-btn" data-tab="plinko">Plinko</button>
+          </div>
+
+          <div id="slotPanel" class="game-panel active">
+            <div class="panel-header">
+              <h2>Lucky Reels</h2>
+              <div class="chip-row">
+                <button class="chip-btn active" data-bet="10">€10</button>
+                <button class="chip-btn" data-bet="25">€25</button>
+                <button class="chip-btn" data-bet="50">€50</button>
+                <button class="chip-btn" data-bet="100">€100</button>
+              </div>
+            </div>
+
+            <div class="slot-machine">
+              <div class="reel" id="reel1"><span class="symbol">🍒</span></div>
+              <div class="reel" id="reel2"><span class="symbol">7</span></div>
+              <div class="reel" id="reel3"><span class="symbol">💎</span></div>
+            </div>
+
+            <div class="controls-row">
+              <button id="slotSpinBtn" class="primary-btn">Drehen</button>
+              <div class="bet-box">
+                <span>Einsatz</span>
+                <strong id="slotBetDisplay">€10</strong>
+              </div>
+            </div>
+          </div>
+
+          <div id="roulettePanel" class="game-panel">
+            <div class="panel-header">
+              <h2>Roulette</h2>
+              <div class="chip-row">
+                <button class="chip-btn active" data-bet="10">€10</button>
+                <button class="chip-btn" data-bet="25">€25</button>
+                <button class="chip-btn" data-bet="50">€50</button>
+                <button class="chip-btn" data-bet="100">€100</button>
+              </div>
+            </div>
+
+            <div class="roulette-wrap">
+              <div class="roulette-wheel" id="rouletteWheel">
+                <div class="roulette-ball"></div>
+                <div class="wheel-pointer"></div>
+              </div>
+              <div class="roulette-results">
+                <div class="result-box">
+                  <span>Aktuelle Zahl</span>
+                  <strong id="rouletteNumber">-</strong>
+                </div>
+                <div class="result-box">
+                  <span>Farbe</span>
+                  <strong id="rouletteColor">-</strong>
+                </div>
+              </div>
+            </div>
+
+            <div class="controls-row">
+              <button id="rouletteSpinBtn" class="primary-btn">Drehen</button>
+              <div class="bet-box">
+                <span>Einsatz</span>
+                <strong id="rouletteBetDisplay">€10</strong>
+              </div>
+            </div>
+          </div>
+
+          <div id="plinkoPanel" class="game-panel">
+            <div class="panel-header">
+              <h2>Plinko</h2>
+              <div class="chip-row">
+                <button class="chip-btn active" data-bet="10">€10</button>
+                <button class="chip-btn" data-bet="25">€25</button>
+                <button class="chip-btn" data-bet="50">€50</button>
+                <button class="chip-btn" data-bet="100">€100</button>
+              </div>
+            </div>
+
+            <div class="plinko-wrap">
+              <div id="plinkoBoard" class="plinko-board"></div>
+              <div class="plinko-payouts">
+                <span>x0.5</span>
+                <span>x1</span>
+                <span>x2</span>
+                <span>x5</span>
+                <span>x10</span>
+                <span>x5</span>
+                <span>x2</span>
+                <span>x1</span>
+                <span>x0.5</span>
+              </div>
+            </div>
+
+            <div class="controls-row">
+              <button id="plinkoDropBtn" class="primary-btn">Ball fallen lassen</button>
+              <div class="bet-box">
+                <span>Einsatz</span>
+                <strong id="plinkoBetDisplay">€10</strong>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <aside class="sidebar">
+          <div class="side-card">
+            <h3>Jackpot</h3>
+            <div class="jackpot-value">€12.500</div>
+            <button class="secondary-btn">Bonus holen</button>
+          </div>
+
+          <div class="side-card">
+            <h3>Gewinnverlauf</h3>
+            <ul id="historyList" class="history-list">
+              <li>+€35 · Slots</li>
+              <li>-€20 · Roulette</li>
+              <li>+€60 · Plinko</li>
+            </ul>
+          </div>
+        </aside>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
